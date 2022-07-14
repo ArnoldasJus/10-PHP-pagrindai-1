@@ -25,12 +25,26 @@ Rezultatas išvedamas į div. -->
         if(isset($_GET["patvirtinti"])) {
             $skaicius1 = $_GET["skaicius1"];
             $skaicius2 = $_GET["skaicius2"];
-        
-            $suma = $skaicius1 + $skaicius2;
-        
-            echo $suma;
+            $veiksmas = $_GET["veiksmas"];
+            
+            if($veiksmas == "+") {
+                $rezultatas = $skaicius1 + $skaicius2;
+                echo $rezultatas;
+            } elseif ($veiksmas == "-") {
+                $rezultatas = $skaicius1 - $skaicius2;
+                echo $rezultatas;
+            } elseif ($veiksmas == "*") {
+                $rezultatas = $skaicius1 * $skaicius2;
+                echo $rezultatas;
+            } elseif ($veiksmas == "/") {
+                $rezultatas = $skaicius1 / $skaicius2;
+                echo $rezultatas;
+            } else {
+                echo "Veiksmas negalimas";
+            }  
         };
         ?>
     </div>
+
 </body>
 </html>
